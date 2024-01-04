@@ -9,7 +9,13 @@ install:
 activate:
 	poetry shell
 
-setup: initialize_git install
+setup: initialize_git install download_data
+
+download_data:
+	mkdir data
+	kaggle competitions download predict-energy-behavior-of-prosumers
+	unzip predict-energy-behavior-of-prosumers.zip -d data
+	rm predict-energy-behavior-of-prosumers.zip
 
 test:
 	poetry run pytest
