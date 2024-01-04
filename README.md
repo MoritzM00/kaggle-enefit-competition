@@ -1,4 +1,4 @@
-# Enefit
+# Kaggle Enefit Competition
 
 ![Tests](https://img.shields.io/github/actions/workflow/status/MoritzM00/kaggle-enefit-competition/test_deploy.yaml?style=for-the-badge&label=Test%20and%20Deploy)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=for-the-badge)][pre-commit]
@@ -13,8 +13,11 @@ The goal of the competition is to create an energy prediction model of prosumers
 
 Download the dataset with
 ```bash
-kaggle competitions download -c predict-energy-behavior-of-prosumers
+mkdir data
+kaggle competitions download predict-energy-behavior-of-prosumers -p ./data/
 ```
+this requires authentication with your Kaggle account, see [here](https://www.kaggle.com/docs/api) for more information.
+
 ## Development
 
 ### Set up the environment
