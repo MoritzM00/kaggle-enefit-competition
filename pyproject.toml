@@ -1,0 +1,62 @@
+[tool.poetry]
+name = "Enefit"
+version = "0.0.0"
+description = ""
+authors = ["Moritz Mistol <moritz.mistol@gmail.com>"]
+readme = "README.md"
+documentation = "https://MoritzM00.github.io/enefit"
+repository = "https://github.com/MoritzM00/enefit"
+license = "MIT"
+keywords = ["Python", "Poetry"]
+packages = [
+    { include = "enefit" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=7.2.2"
+pre-commit = ">=3.1.1"
+pdoc = ">=0.10.0"
+black = ">=23.1.0"
+ruff = ">=0.1.9"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 88
+extend-exclude = ["enefit/__init__.py"]
+
+[tool.ruff.extend-per-file-ignores]
+# Also ignore `E402` in all `__init__.py` files.
+"__init__.py" = ["E402"]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # pydocstyle
+    "D",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+    # pandas related
+    "PD",
+]
+extend-ignore = ["D203", "D213"]
+
+[too.ruff.lint.pydocstyle]
+convetion = "numpy"
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
