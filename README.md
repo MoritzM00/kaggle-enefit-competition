@@ -1,18 +1,21 @@
 # Enefit
 
-![Tests](https://img.shields.io/github/actions/workflow/status/MoritzM00/enefit/test_deploy.yaml?style=for-the-badge&label=Test%20and%20Deploy)
+![Tests](https://img.shields.io/github/actions/workflow/status/MoritzM00/kaggle-enefit-competition/test_deploy.yaml?style=for-the-badge&label=Test%20and%20Deploy)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=for-the-badge)][pre-commit]
 [![Black](https://img.shields.io/static/v1?label=code%20style&message=black&color=black&style=for-the-badge)][black]
-![License](https://img.shields.io/github/license/MoritzM00/Enefit?style=for-the-badge)
+![License](https://img.shields.io/github/license/MoritzM00/kaggle-enefit-competition?style=for-the-badge)
 
 [pre-commit]: https://github.com/pre-commit/pre-commit
 [black]: https://github.com/psf/black
 
----
+This repo contains code for the Kaggle [Enefit Energy Prediction Competition](https://www.kaggle.com/competitions/predict-energy-behavior-of-prosumers).
+The goal of the competition is to create an energy prediction model of prosumers to reduce energy imbalance costs.
 
-## Quick Start
-
-Below you can find the quick start guide for development.
+Download the dataset with
+```bash
+kaggle competitions download -c predict-energy-behavior-of-prosumers
+```
+## Development
 
 ### Set up the environment
 
@@ -24,15 +27,8 @@ make setup
 make activate
 ```
 
-Note: On Apple Silicon, you need to install `libomp` with `brew install libomp` before running `make setup`. Otherwise, the lightgbm build will fail.
+Note: On Apple Silicon, you may need to install `libomp` with `brew install libomp` before running `make setup`. Otherwise, the lightgbm build will fail.
 
-### Additional first-time setup
-
-1. After setting up the environment, commit the `poetry.lock` file to your repository, so that the workflow on github can use it.
-2. Enable [Pre-Commit CI](https://pre-commit.ci/) for your repository.
-3. Enable **Github Pages** for your documentation.
-   To do that, go to the _Settings_ tab of your repository and scroll down to the _GitHub Pages_ section.
-   For the _Source_ option, select _GitHub Action_. Done!
 
 ### Install new packages
 
