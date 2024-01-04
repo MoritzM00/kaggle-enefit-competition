@@ -24,6 +24,8 @@ make setup
 make activate
 ```
 
+Note: On Apple Silicon, you need to install `libomp` with `brew install libomp` before running `make setup`. Otherwise, the lightgbm build will fail.
+
 ### Additional first-time setup
 
 1. After setting up the environment, commit the `poetry.lock` file to your repository, so that the workflow on github can use it.
